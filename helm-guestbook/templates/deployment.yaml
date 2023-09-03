@@ -11,12 +11,10 @@ spec:
   selector:
     matchLabels:
       app: guestbook
-      release: {{ .Release.Name }}
   template:
     metadata:
       labels:
         app: guestbook
-        release: {{ .Release.Name }}
     spec:
       containers:
         - name: guestbook

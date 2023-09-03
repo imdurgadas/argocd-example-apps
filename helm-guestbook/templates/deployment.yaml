@@ -1,12 +1,12 @@
-{{- range $v := .Values.instances }}
+{{- range .Values.instances }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ $v.iName }}
+  name: {{ .iName }}
   labels:
     app: guestbook
 spec:
-  replicas: {{ $v.iReplica }}
+  replicas: {{ .iReplica }}
   revisionHistoryLimit: 3
   selector:
     matchLabels:

@@ -4,9 +4,9 @@
 
 instances:
   - iName: nginx
-    iReplica: 1
+    iReplica: 2
     
-replicaCount: 1
+
 
 image:
   repository: gcr.io/heptio-images/ks-guestbook-demo

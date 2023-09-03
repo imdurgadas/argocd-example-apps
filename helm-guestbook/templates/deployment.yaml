@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: {{ $v.iName }}
   labels:
-    app: {{ .Chart.Name }}
+    app: guestbook
 spec:
   replicas: {{ $v.iReplica }}
   revisionHistoryLimit: 3
@@ -19,7 +19,7 @@ spec:
         release: {{ .Release.Name }}
     spec:
       containers:
-        - name: {{ .Chart.Name }}
+        - name: guestbook
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:

@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 instances:
-  - iName: nginx-1
+  - iName: nginx
     iReplica: 1
     
 replicaCount: 1

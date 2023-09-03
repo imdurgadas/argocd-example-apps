@@ -5,8 +5,8 @@
 instances:
   - iName: nginx
     iReplica: 2
-  - iName: nginx-2
-    iReplica: 1
+  # - iName: nginx-2
+  #   iReplica: 1
     
 
 image:

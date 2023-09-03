@@ -1,14 +1,15 @@
+{{- range .Values.instances }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "helm-guestbook.fullname" . }}
+  name: {{ .name }}
   labels:
     app: {{ template "helm-guestbook.name" . }}
     chart: {{ template "helm-guestbook.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .replica }}
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -50,3 +51,5 @@ spec:
       tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}
+---
+{{- end }}

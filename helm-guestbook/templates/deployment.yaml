@@ -18,8 +18,8 @@ spec:
     spec:
       containers:
         - name: guestbook
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          image: {{ $.Values.image.repository }}:{{ $.Values.image.tag }}
+          imagePullPolicy: {{ $.Values.image.pullPolicy }}
           ports:
             - name: http
               containerPort: 80

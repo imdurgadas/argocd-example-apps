@@ -1,4 +1,4 @@
-{{- range .Values.instances }}
+#{{- range .Values.instances }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -52,4 +52,4 @@ spec:
 {{ toYaml . | indent 8 }}
     {{- end }}
 ---
-{{- end }}
+#{{- end }}

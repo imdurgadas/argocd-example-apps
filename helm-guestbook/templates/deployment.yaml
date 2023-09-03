@@ -1,3 +1,4 @@
+{{- range .Values.instances }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -8,7 +9,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
-  replicas: 1
+  replicas: {{ .iReplica }}
   revisionHistoryLimit: 3
   selector:
     matchLabels:
